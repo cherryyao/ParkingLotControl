@@ -20,7 +20,7 @@ public class ParkingboyController {
             Car car = new Car(inputs);
             Receipt receipt = parkingBoy.parking(car);
             response.send("停车成功，您的小票是："+receipt.getUUID()+"\n");
-            showMainPage();
+            response.send("1.停车服务\n" + "2.停车场管理\n" + "请输入您要进入的页面：");
 
         }else{
             throw new ParkingLotFullException();
@@ -32,8 +32,9 @@ public class ParkingboyController {
             Receipt receipt = new Receipt(UUID.fromString(inputRecipit));
             Car car = parkingBoy.pickCar(receipt);
              response.send("车已取出，您的车牌号是: " +car.getId()+"\n");
-            showMainPage();
+             response.send("1.停车服务\n" + "2.停车场管理\n" + "请输入您要进入的页面：");
         }catch (Exception e){
+            response.send("非法小票，无法取出车，请查证后再输");
             throw new UnparkExcepiton();
         }
     }
@@ -45,26 +46,28 @@ public class ParkingboyController {
     public void showMainPage() {
         response.send("1.停车\n" + "2.取车\n" + "请输入您要进行的操作:\n");
     }
+
     public String mainPage(Request request){
        String currentPage = "main";
         switch (request.getParameter()){
-
             case "1":
                 if (isParking()){
                     response.send("请输入车牌号：");
-                    currentPage="park";
+                    currentPage="parkService_park";
                 }else {
                     response.send("车已停满，请晚点再来");
                     currentPage="main";
                 }
                 break;
             case "2":
-                currentPage = "unpark";
+                currentPage = "parkService_unpark";
                 response.send("请输入小票编号：");
+                currentPage = "main";
                 break;
             default:
                 response.send("非法指令，请查证后再输\n");
-                showMainPage();
+                //showMainPage();
+                currentPage = "main";
 
         }
         return currentPage;
