@@ -15,8 +15,8 @@ public class ParkingLotMangeMain {
         Request request = new Request();
         Response response = new Response();
 
-        ParkingLot parkingLot1 =new ParkingLot(1);
-        ParkingLot parkingLot2 =new ParkingLot(1);
+        ParkingLot parkingLot1 =new ParkingLot("001", "西南停车场", 28);
+        ParkingLot parkingLot2 =new ParkingLot("002", "西南停车场", 12);
         List<ParkingLot> ParkingLotList = new ArrayList<>();
         ParkingLotList.add(parkingLot1);
         ParkingLotList.add(parkingLot2);

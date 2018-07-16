@@ -38,6 +38,10 @@ public class LotsRoute {
             case "LotsService":
                 this.currentPage =lotsController.MainPage(request);
                 break;
+            case "LotsDetail":
+                lotsController.printParkingLotDetails();
+                this.currentPage ="manageMain";
+                break;
 
         }
     }

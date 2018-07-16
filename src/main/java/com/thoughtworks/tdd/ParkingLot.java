@@ -7,11 +7,18 @@ import java.util.UUID;
 
 public class ParkingLot {
 
-    int size;
+
+    private String id;
+    private String lotsName;
+    private int size;
+
     private Map<UUID,Car> carReceipt = new HashMap<>();
 
 
-    public ParkingLot(int size) {
+    public ParkingLot( String id, String lotsName,int size) {
+
+        this.id = id;
+        this.lotsName = lotsName;
         this.size = size;
     }
 
@@ -46,5 +53,26 @@ public class ParkingLot {
         return carReceipt.size() == size;
     }
 
+    public int getSize() {
+        return size;
+    }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getLotsName() {
+        return lotsName;
+    }
+
+    public void setLotsName(String lotsName) {
+        this.lotsName = lotsName;
+    }
+    public Map<UUID, Car> getCarReceipt() {
+        return carReceipt;
+    }
 }

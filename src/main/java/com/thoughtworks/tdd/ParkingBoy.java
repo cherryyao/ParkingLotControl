@@ -4,10 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ParkingBoy {
-    private List<ParkingLot > ParkingLotList= new ArrayList<ParkingLot >();
+
+    private List<ParkingLot> ParkingLotList;
+
+    public List<ParkingLot> getParkingLotList() {
+        return ParkingLotList;
+    }
 
     public ParkingBoy(List<ParkingLot> parkingLotList) {
-
         ParkingLotList = parkingLotList;
     }
 

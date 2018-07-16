@@ -18,7 +18,7 @@ public class ManageController {
                 currentPage = "parkService";
                 break;
             case "2":
-                response.send(("\n1.查看停车场详情\n" + "2.添加停车场\n" + "3.删除停车场"));
+                response.send(("\n1.查看停车场详情\n" + "2.添加停车场\n" + "3.删除停车场\n请输入您要进行的操作:\n"));
                 currentPage = "LotsService";
                 break;
             default:

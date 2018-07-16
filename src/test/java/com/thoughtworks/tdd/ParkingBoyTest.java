@@ -152,7 +152,7 @@ public class ParkingBoyTest {
 
     @Test
     public void should_not_get_specific_car_when_call_unPark_given_receipt_is_wrong(){
-        ParkingLot parkingLot1 = new ParkingLot(2);
+        ParkingLot parkingLot1 = new ParkingLot(2, id, lotsName);
         List<ParkingLot> ParkingLotList  = new ArrayList<ParkingLot >();
         ParkingLotList.add(parkingLot1);
         ParkingBoy parkingBoy =new ParkingBoy(ParkingLotList);
