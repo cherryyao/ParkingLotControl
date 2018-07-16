@@ -7,7 +7,7 @@ public class LotsMangeController {
     private Response response =new Response();
 
     public void showMainPage() {
-        response.send("1.查看停车场详情\n" + "2.添加停车场\n" + "3.删除停车场\n");
+        response.send("1.查看停车场详情\n" + "2.添加停车场\n" + "3.删除停车场");
     }
 
     public String MainPage(Request request) {
@@ -18,15 +18,15 @@ public class LotsMangeController {
                 currentPage = "LotsDetail";
                 break;
             case "2":
-                response.send(("\n请输入你要添加的停车场信息（格式为：名称，车位）：\n"));
+                response.send(("\n请输入你要添加的停车场信息（格式为：名称，车位）："));
                 currentPage = "InsertLotDetail";
                 break;
             case "3":
-                response.send(("请输入需要删除的被管理停车场ID:\n"));
+                response.send(("请输入需要删除的被管理停车场ID:"));
                 currentPage = "DelLotID";
                 break;
             default:
-                response.send("\n非法指令，请查证后再输\n");
+                response.send("\n非法指令，请查证后再输");
                 showMainPage();
 
         }

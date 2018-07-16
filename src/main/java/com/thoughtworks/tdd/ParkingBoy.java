@@ -25,11 +25,16 @@ public class ParkingBoy {
 
     public Car pickCar(Receipt receipt) {
        Car car =  new Car();
-       for (int i =0;i<ParkingLotList.size();i++) {
-           car = ParkingLotList.get(i).unPack(receipt);
-           break;
+       try{
+           for (int i =0;i<ParkingLotList.size();i++) {
+               car = ParkingLotList.get(i).unPack(receipt);
+               break;
+           }
+
+       }catch (UnparkExcepiton e ){
+
        }
-       return car;
+        return car;
     }
 
     public boolean isParking() {

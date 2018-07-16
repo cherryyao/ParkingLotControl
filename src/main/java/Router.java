@@ -22,11 +22,11 @@ public class Router {
                 this.currentPage = controller.mainPage(request);
                 break;
             case "park":
-                controller.park(request.getParameter());
+                controller.parkPage(request.getParameter());
                 this.currentPage = "main";
                 break;
             case "unpark":
-                controller.unPark(request.getParameter());
+                controller.unparkPage(request);
                 this.currentPage = "main";
                 break;
             default:

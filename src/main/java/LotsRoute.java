@@ -28,11 +28,11 @@ public class LotsRoute {
                 this.currentPage =parkingController.mainPage(request);
                 break;
             case "parkService_park":
-                parkingController.park(request.getParameter());
+                parkingController.parkPage(request.getParameter());
                 this.currentPage ="manageMain";
                 break;
             case "parkService_unpark":
-                parkingController.unPark(request.getParameter());
+                parkingController.unparkPage(request);
                 this.currentPage ="manageMain";
                 break;
             case "LotsService":

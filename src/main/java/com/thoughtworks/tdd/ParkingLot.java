@@ -35,7 +35,7 @@ public class ParkingLot {
             carReceipt.remove(receipt.getUUID());
             return car;
         }else {
-             System.out.print("非法小票，无法取出车，请查证后再输");
+            System.out.print("非法小票，无法取出车，请查证后再输");
             throw new UnparkExcepiton();
         }
 
